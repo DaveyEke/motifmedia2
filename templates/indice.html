@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Motif Media - Login </title>
+
+    <link rel="shortcut icon" href="{% static 'assets1/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets1/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets1/css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets1/css/style.css' %}" />
+    <style>
+      h5{
+        color : red;
+      }
+    </style>
+</head>
+
+    <body class="h-100">
+        <div class="container-fluid full-bg h-100">
+           <div class="container h-100">
+               <div class="row no-margin h-100">
+                   <div class="bg-layer d-flex col-md-4">
+                        <div class="login-box row">
+                            <h3>User login</h3>
+                            {% for message in messages %}
+                            <h5>{{message}}<h5>
+                            {% endfor %}
+                            <form action="login" method="POST">
+                              {% csrf_token %}
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+                              </div>
+                              <input type="text" name="name" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                              </div>
+                              <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                              <input class="btn btn-success" type="submit" value=" Login">
+                            </div>
+                            
+                            </form>
+
+                            
+                            <!-- <p>
+                            <label class="container">
+                              <input type="checkbox">
+                              <span class="checkmark"></span>Remember me
+                            </label>
+                            forget password ?</p> -->
+                            
+                            
+                            <p class="no-c">Not a member yet? <a href="signup">Create your Account</a></p>
+                        </div>
+                    </div>    
+               </div>
+              
+               <div class="foter-credit">
+                  <a href="https://smarteyeapps.com/">Designed by : Smarteyeapps.com</a>  
+               </div>
+           </div>
+            
+        </div>
+    </body>
+
+<script src="{% static 'assets1/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'assets1/js/popper.min.js' %}"></script>
+<script src="{% static 'assets1/js/bootstrap.min.js' %}"></script>        
+<script src="{% static 'assets1/js/script.js' %}"></script>
+
+
+</html>
